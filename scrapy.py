@@ -5,12 +5,14 @@ from bs4 import BeautifulSoup
 
 
 def readCompanyName(filename="companies.txt"):
+    # Reads in Company Name
     with open(filename, "r") as companies:
         for company in companies:
             return company
 
 
 def getRawData(company_name):
+    # Gets The twitter LInk
     searchUrl = f'https://www.google.com/search?q={company_name}'
 
     driver = webdriver.Chrome()
@@ -31,6 +33,7 @@ def compose_twitter_handler(company_name):
 
 
 def get_twitter_page(twitter_url, company_name):
+    # Returns Company Link
     driver = webdriver.Chrome()
     driver.get(twitter_url)
     time.sleep(15)
@@ -42,11 +45,13 @@ def get_twitter_page(twitter_url, company_name):
 
 
 def edit_link_to_contact(company_name):
+    # Edits new company Link
     new_company_link = f'https://www.{company_name}.com/contact/'
     return new_company_link
 
 
 def get_company_website(new_company_link):
+    # Captures Company Website
     driver = webdriver.Chrome()
     driver.get(new_company_link)
     time.sleep(15)
@@ -56,7 +61,7 @@ def get_company_website(new_company_link):
 
 
 def writeCompanyContact(company_email, company_name):
-
+    # writes contact information to a txt file
     companyName = company_name.strip()
     info = f"{companyName}:{company_email}"
     contact = info.strip()
