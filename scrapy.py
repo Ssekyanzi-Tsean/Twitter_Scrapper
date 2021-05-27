@@ -4,20 +4,20 @@ import re
 from bs4 import BeautifulSoup
 
 
-def readCompanyName(filename="companies.txt"):
-    # Reads in Company Name
+def read_company_name(filename="companies.txt"):
+    '''Reads in Company Name'''
     with open(filename, "r") as companies:
         for company in companies:
             return company
 
 
-def getRawData(company_name):
-    # Gets The twitter LInk
-    searchUrl = f'https://www.google.com/search?q={company_name}'
+def get_raw_data(company_name):
+    '''Gets The twitter LInk'''
+    search_url = f'https://www.google.com/search?q={company_name}'
 
     driver = webdriver.Chrome()
 
-    driver.get(searchUrl)
+    driver.get(search_url)
     time.sleep(15)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
@@ -28,12 +28,13 @@ def getRawData(company_name):
 
 
 def compose_twitter_handler(company_name):
+    '''Makes the Twitter Url'''
     twitter_url = f'https://twitter.com/{company_name}?'
     return twitter_url
 
 
 def get_twitter_page(twitter_url, company_name):
-    # Returns Company Link
+    '''Returns Company Link'''
     driver = webdriver.Chrome()
     driver.get(twitter_url)
     time.sleep(15)
@@ -45,13 +46,13 @@ def get_twitter_page(twitter_url, company_name):
 
 
 def edit_link_to_contact(company_name):
-    # Edits new company Link
+    '''Edits new company Link'''
     new_company_link = f'https://www.{company_name}.com/contact/'
     return new_company_link
 
 
 def get_company_website(new_company_link):
-    # Captures Company Website
+    '''Captures Company Website'''
     driver = webdriver.Chrome()
     driver.get(new_company_link)
     time.sleep(15)
@@ -60,10 +61,10 @@ def get_company_website(new_company_link):
     return company_email
 
 
-def writeCompanyContact(company_email, company_name):
-    # writes contact information to a txt file
+def write_company_contact(company_email, company_name):
+    ''' writes contact information to a txt file'''
     companyName = company_name.strip()
     info = f"{companyName}:{company_email}"
     contact = info.strip()
-    with open("contactinfo.txt", "w") as contactinfo:
+    with open("contactinfo.txt", "a") as contactinfo:
         contactinfo.write(contact)
