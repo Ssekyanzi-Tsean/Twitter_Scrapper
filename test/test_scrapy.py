@@ -4,7 +4,7 @@ import scrapy
 def test_read_company_name():
     ''' Test Company Reader'''
 
-    company_name = scrapy.readCompanyName()
+    company_name = scrapy.read_company_name()
 
     assert company_name == 'unilever'
 
