@@ -26,7 +26,8 @@ def get_raw_data(url):
     time.sleep(10)
     html = driver.page_source
     soup = BeautifulSoup(html, 'lxml')
-    return soup
+    data_page = soup.text
+    return data_page
 
 
 def google_search_handler(company_name):
