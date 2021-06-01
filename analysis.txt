@@ -12,3 +12,12 @@ MoviT
 company_name:movit
 company_link:https://t.co/dhCPLeZcms?amp=1
 company_email:sales@movit.co.ug
+
+
+with open(filename, "r") as companies:
+        try:
+            
+        except Exception:
+            contents = companies.readlines()
+            for lines in contents:
+                return lines

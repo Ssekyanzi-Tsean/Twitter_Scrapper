@@ -6,12 +6,17 @@ from bs4 import BeautifulSoup
 
 def read_company_name(filename="companies.txt"):
     '''Reads in Company Name'''
-    with open(filename, "r") as companies:
-        contents = companies.readlines()
-
-        for lines in contents:
-
-            return lines
+    try:
+        with open(filename, "r") as companies:
+            pass
+    except FileNotFoundError as err:
+        print("Company File Not Found")
+        print(f'key: {err}')
+    else:
+        with open(filename, "r") as companies:
+            contents = companies.readlines()
+            for lines in contents:
+                return lines
 
 
 def get_raw_data(url):
