@@ -37,6 +37,7 @@ def google_search_handler(company_name):
 
 def get_twitter_link(soup):
     '''Pulls out The Twitter Link out of the Google Search Soup Object'''
+
     for link in soup.findAll('a', attrs={'href': re.compile("a")}):
         href = link.get('href')
         if "twitter" in href:
