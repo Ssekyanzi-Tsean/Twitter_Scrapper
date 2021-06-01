@@ -19,7 +19,7 @@ def test_google_search_handler():
     '''Test Google Search Results'''
     company_name = 'MovitProductsUg'
     company_link = scrapy.google_search_handler(company_name)
-    assert company_link == 'https://www.google.com/search?q=MovitProductUg'
+    assert company_link == 'https://www.google.com/search?q=MovitProductsUg'
 # def test_edit_link_to_contact():
 #     ''' forms a contact link to the company website'''
 #     company_name = 'cafejavas'
