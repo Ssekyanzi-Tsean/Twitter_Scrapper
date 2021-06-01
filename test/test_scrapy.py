@@ -9,6 +9,13 @@ def test_read_company_name():
     assert company_name == 'crestfoamuganda\n'
 
 
+def test_get_raw_data():
+    '''Test Selenium Raw Data'''
+    movit_url = 'https://t.co/dhCPLeZcms?amp=1'
+    movit_data = scrapy.get_raw_data(movit_url)
+    assert len(movit_data) == 1
+
+
 # def test_compose_twitter_handler():
 #     ''' Twitter Link Composer'''
 #     company_name = 'glovo'
