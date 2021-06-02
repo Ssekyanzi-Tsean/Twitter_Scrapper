@@ -1,4 +1,6 @@
+from socket import SOL_UDP
 from bs4 import BeautifulSoup
+from selenium import webdriver
 import scrapy
 
 
@@ -10,12 +12,6 @@ def test_read_company_name():
     assert company_name == 'crestfoamuganda\n'
 
 
-# def test_get_raw_data():
-#     '''Test Selenium Raw Data'''
-#     movit_url = 'https://t.co/dhCPLeZcms?amp=1'
-#     movit_data = scrapy.get_raw_data(movit_url)
-#     assert len(movit_data) == 1
-
 def test_google_search_handler():
     '''Test Google Search Results'''
     company_name = 'MovitProductsUg'
@@ -23,7 +19,15 @@ def test_google_search_handler():
     assert company_link == 'https://www.google.com/search?q=MovitProductsUg'
 
 
-def test_get_twitter_link():
+def test_get_raw_data():
+    '''Tests Get Raw Data'''
+    global driver
+    driver = webdriver.Chrome()
+    driver.implicitly_wait(5)
+    assert driver.quit
+
+
+def test_turn_to_soup():
     '''Test Twitter Link Grabber'''
     multiline_markup = """
     <!DOCTYPE html>
@@ -37,6 +41,4 @@ url=https://twitter.com/MovitProductsUg%3Fref_src%3Dtwsrc%255Egoogle%257Ctwcamp%
 </body>
 </html>"""
     soup = BeautifulSoup(multiline_markup, 'lxml')
-    markup = "https://www.twitter.com"
-    graber = scrapy.get_twitter_link(soup)
-    assert markup in graber
+    soup.get_text()

@@ -1,3 +1,4 @@
+
 from selenium import webdriver
 import time
 import re
@@ -25,7 +26,7 @@ def get_raw_data(url):
         driver.get(url)
         time.sleep(10)
         html = driver.page_source
-        # soup = BeautifulSoup(html, 'lxml')
+        driver.quit()
 
         return html
     except Exception as err:
