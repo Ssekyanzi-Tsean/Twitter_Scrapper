@@ -30,7 +30,7 @@ def test_get_twitter_link():
 <html>
 <body>
 <h2>The target Attribute</h2>
-<a href="https://www.twitter.com" target="_blank">Visit our HTML tutorial!</a> 
+<a href="https://www.twitter.com" target="_blank">Visit our HTML tutorial!</a>
 <a class="a-no-hover-decoration" href="https://twitter.com/MovitProductsUg?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;
 url=https://twitter.com/MovitProductsUg%3Fref_src%3Dtwsrc%255Egoogle%257Ctwcamp%255Eserp%257Ctwgr%255Eauthor&amp;ved=2ahUKEwiRzpuFvfHwAhVITBoKHRdFCUUQ6F56BAgCEAI&amp;cshid=1622380378317895"><br><h3 class="NsiYH">Movit (@MovitProductsUg) · Twitter</h3><div class="V0XQK"><cite class="ellip iUh30">https://twitter.com/MovitProductsUg</cite></div></a>
 <p>If you set the target attribute to "_blank", the link will open in a new browser window or tab.</p>
