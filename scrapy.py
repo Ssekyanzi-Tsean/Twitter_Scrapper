@@ -47,6 +47,7 @@ def turn_to_soup(html):
         return soup
     except Exception as err:
         print(f'key:{err}')
+        print("Company Missing Element")
     else:
         pass
 

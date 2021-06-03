@@ -13,6 +13,10 @@ company_name:movit
 company_link:https://t.co/dhCPLeZcms?amp=1
 company_email:sales@movit.co.ug
 
+CafeSserrie
+company_name:cafesserie
+company_link:https://t.co/dhCPLeZcms?amp=1
+company_email:sales@movit.co.ug
 
 with open(filename, "r") as companies:
         try:
