@@ -39,6 +39,7 @@ def turn_to_soup(html):
     '''Takes get raw function from Selenium and turns it to Soup Object'''
     try:
         soup = BeautifulSoup(html, 'lxml')
+
         return soup
     except Exception as err:
         print(f'key:{err}')
