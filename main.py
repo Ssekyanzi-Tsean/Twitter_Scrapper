@@ -1,11 +1,11 @@
 import scrapy
 
 # company_name = scrapy.read_company_name()
-
-company_names = ['crestfoamuganda', 'movitProductsug', 'cafejavas']
+# 'movitProductsug', 'cafejavas'
+company_names = ['crestfoamuganda', 'ntvug', 'cafejavas']
 
 for company_name in company_names:
-
+    print(f'=={company_name}==')
     linker = scrapy.google_search_handler(company_name)
 
     html_object = scrapy.get_raw_data(linker)

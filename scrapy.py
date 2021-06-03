@@ -29,8 +29,12 @@ def get_raw_data(url):
         driver.quit()
 
         return html
+    except TypeError as err:
+        print(f'key:{err}')
+        print("No link Found")
     except Exception as err:
         print(f'key:{err}')
+        print("Company Missing Element")
     else:
         pass
 
@@ -51,8 +55,9 @@ def google_search_handler(company_name):
     '''function forms google search link'''
     try:
         google_link = f'https://www.google.com/search?q={company_name}'
-    except Exception as err:
+    except TypeError as err:
         print(f'key:{err}')
+        print("No link Found")
     else:
         return google_link
 
@@ -64,9 +69,12 @@ def get_twitter_link(soup):
             href = link.get('href')
             if "twitter" in href:
                 return href
-    except Exception as err:
+    except TypeError as err:
         print(f'key: {err}')
         print('Twitter Link Not Found')
+    except Exception as err:
+        print(f'key: {err}')
+        print("Something Went Wrong")
     else:
         pass
 
